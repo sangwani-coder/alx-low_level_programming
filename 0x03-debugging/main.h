@@ -2,5 +2,5 @@
 #define MAIN_H
 int _putchar(char c);
 
-int largest_number(a, b, c);
+int largest_number(int a, int b, int c);
 #endif
