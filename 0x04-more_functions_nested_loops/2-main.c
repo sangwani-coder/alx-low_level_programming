@@ -5,11 +5,11 @@
  *
  *Return Always 0.
  */
-int mul(int, int);
+
+void more_numbers(void);
 
 int main(void)
 {
-	printf("%d\n", mul(98, 1024));
-	printf("%d\n", mul(-402, 4096));
+	more_numbers();
 	return (0);
 }
