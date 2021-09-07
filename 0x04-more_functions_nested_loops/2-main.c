@@ -6,10 +6,13 @@
  *Return Always 0.
  */
 
-void more_numbers(void);
+void print_line(int n);
 
 int main(void)
 {
-	more_numbers();
+	print_line(0);
+	print_line(2);
+	print_line(10);
+	print_line(-4);
 	return (0);
 }
