@@ -4,7 +4,7 @@ int _putchar(char c);
 int _islower(int c);
 int _isalpha(int c);
 int print_sign(int n);
-int _abs(int);
+int _abs(int n);
 void more_numbers(void);
 int _isdigit(int c);
 int _isupper(int c;
