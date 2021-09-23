@@ -21,7 +21,5 @@ void *malloc_checked(unsigned int b)
 		exit(98);
 	}
 
-	printf("allocated\n");
-
 	return (ptr);
 }
