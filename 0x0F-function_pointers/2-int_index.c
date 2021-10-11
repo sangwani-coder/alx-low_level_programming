@@ -22,7 +22,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 			 return (-1);
 		 }
 		 
-		/* cmp();
+		cmp(i);
 		 printf("element: %d\n", k);*/
 		 return (cmp(i));
 	}
