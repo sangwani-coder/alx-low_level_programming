@@ -19,7 +19,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	if (newNode == NULL)
 		return (NULL);
 	/*if head is NULL its an empty list*/
-	if (*head == NULL)
+	else if (*head == NULL)
 	{
 		*head = newNode;
 	}
