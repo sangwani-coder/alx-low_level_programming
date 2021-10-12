@@ -34,6 +34,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		}
 		/*Add the new node the end of the list*/
 		lastNode->next = newNode;
+		return (newNode);
 	}
 	return (0);
 }
