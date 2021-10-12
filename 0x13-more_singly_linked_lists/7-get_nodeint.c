@@ -27,7 +27,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		count++;
 		curr = curr->next;
 	}
-	if (curr == NULL && count < index)
+	if (curr == NULL || curr->next == NULL)
 		return (NULL);
 	return (curr);
 }
