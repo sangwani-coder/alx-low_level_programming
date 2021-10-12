@@ -9,30 +9,26 @@
  */
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	unsigned int i = 0;
-	/*Declare a new node of listint_t datatype*/
-	listint_t *newNode, *temp;
+	listint_t *ptr = malloc(sizeof(listint_t));
+	unsigned int i;
+	listint_t *temp;
 
-	/*Create the new node*/
-	newNode = malloc(sizeof(listint_t));
-
-	if (newNode == NULL)
-		return (NULL);
-	newNode->n = n;
-	newNode->next = NULL;
+	ptr->n = n; /*Creating a new node*/
 	temp = *head;
-
-	if (idx == 1)
+	
+	if ( idx == 1)
 	{
-		newNode->next = temp;
-		*head = newNode;
-		return (newNode);
+		ptr->next = temp;
+		*head = ptr;
+		return (0);
 	}
-	for (i = 1; i < idx; i++)
+	
+	for ( i = 1; i < idx - 1; i++)  /*moving to the (n-1)th position node in the linked list*/
 	{
 		temp = temp->next;
 	}
-	newNode->next = temp->next;
-	temp->next = newNode;
-	return (newNode);
+	ptr->next = temp->next;  /* the newly created node point to next node of ptr temp*/
+	temp->next = ptr;  	/*Make ptr temp point to newly created node in the linked list*/
+	return (0);
 }
+
