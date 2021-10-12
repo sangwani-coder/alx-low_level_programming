@@ -9,10 +9,10 @@
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
 	/*Declare a new node of listint_t datatype*/
-	listint_t *newNode;
-
 	/*Create the new node*/
-	newNode = malloc(sizeof(listint_t));
+	listint_t *newNode = malloc(sizeof(listint_t));
+	listint_t *lastNode;
+
 	newNode->n = n;
 	newNode->next = NULL;
 
@@ -26,7 +26,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	/*Otherwise find the last node and add the new nodes*/
 	else
 	{
-		listint_t *lastNode = *head;
+		lastNode = *head;
 		/*last node's next address will be NULL.*/
 		while (lastNode->next != NULL)
 		{
