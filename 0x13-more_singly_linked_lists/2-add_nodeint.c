@@ -11,6 +11,8 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	/*Declare and create a new node of listint_t datatype*/
 	listint_t *newNode = malloc(sizeof(listint_t));
 
+	if (newNode == NULL)
+		return (NULL);
 	newNode->n = n;
 	/*Make the new node point to the head node*/
 	newNode->next = (*head);
