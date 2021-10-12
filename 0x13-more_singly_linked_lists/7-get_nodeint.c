@@ -24,10 +24,10 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		{
 			return (curr->next);
 		}
-		else if (curr == NULL && index > count)
-			return (NULL);
 		count++;
 		curr = curr->next;
 	}
+	if (curr == NULL && count < index)
+		return (NULL);
 	return (curr);
 }
