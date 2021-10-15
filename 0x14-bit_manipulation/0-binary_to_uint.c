@@ -10,7 +10,7 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int num, decimal = 0, base = 1, rem;
+	unsigned int num, decimal = 0, base = 1, rem;
 	size_t i;
 
 	if (b == NULL)
