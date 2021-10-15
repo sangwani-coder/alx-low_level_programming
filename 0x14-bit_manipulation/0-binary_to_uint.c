@@ -13,17 +13,15 @@ unsigned int binary_to_uint(const char *b)
 	int num, decimal = 0, base = 1, rem;
 	size_t i;
 
+	if (b == NULL)
+		return (0);
+
 	for (i = 0; i < strlen(b); i++) /* search for null 0 or 1 characters*/
 	{
 		if (isdigit(b[i]) == 0)
 		{
 			return (0);
 		}
-	}
-
-	if (b == NULL)
-	{
-		return (0);
 	}
 
 	num = atoi(b);
