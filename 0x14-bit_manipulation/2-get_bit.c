@@ -8,9 +8,10 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned int bit_status;
-
+	
 	/*Right shift n, index times and perform bitwise AND with 1*/
-	bit_status = (n >> index) & 1;
-	return (bit_status);
+	if ((n >> index) & 1)
+		return (1);
+	else
+		return (0);
 }
