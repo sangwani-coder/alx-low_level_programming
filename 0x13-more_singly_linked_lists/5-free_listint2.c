@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
 /**
  * free_listint2 - free a list
  * @head: first node of list
@@ -7,7 +6,13 @@
  */
 void free_listint2(listint_t **head)
 {
-	listint_t *new = *head;
+	listint_t *new;
+
+	if (*head == NULL)
+	{
+		new = *head;
+		printf("Head is null");
+	}
 
 	while (*head != NULL)
 	{
@@ -15,6 +20,4 @@ void free_listint2(listint_t **head)
 		(*head) = (*head)->next;
 		free(new);
 	}
-	*head = NULL;
 }
-
