@@ -10,27 +10,22 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int num, decimal = 0, base = 1, rem;
-	size_t i;
+	unsigned int decimal = 0, base = 1;
+	int i;
 
 	if (b == NULL)
 		return (0);
 
-	for (i = 0; i < strlen(b); i++) /* search for null 0 or 1 characters*/
+	for (i = 0; b[i];)
+		i++;
+
+	for (i -= 1; i >= 0; i--) /* search for null 0 or 1 characters*/
 	{
 		if (isdigit(b[i]) == 0)
 		{
 			return (0);
 		}
-	}
-
-	num = atoi(b);
-
-	while (num > 0)
-	{
-		rem = num % 10;
-		decimal = decimal + rem * base;
-		num /= 10;
+		decimal += (b[i] - '0') * base;
 		base *= 2;
 	}
 	return (decimal);
