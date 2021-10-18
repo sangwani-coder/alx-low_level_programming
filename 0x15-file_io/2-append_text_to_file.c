@@ -1,35 +1,51 @@
 #include "main.h"
 
+int _strlen(char *s);
+
 /**
- * append_text_to_file - add text to a file
- *@filename: name of the file
- *@text_content: a NULL terminated string to be added to filename
+ * append_text_to_file - append text in a file
+ * @filename: pointer to file
+ * @text_content: pointer to string
  *
- * Return: 1 on success, -1 on failure
+ * Return: 1 on success
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	ssize_t i, opn, wrt;
+	int fd, len, open_flags;
+
 
 	if (filename == NULL)
 		return (-1);
 
-	if (text_content != NULL)
-	{
-		for (i = 0; text_content[i];)
-			i++;
-	}
+	if (text_content == NULL)
+		return (1);
 
-	/* open and write */
-	opn = open(filename, O_WRONLY | O_APPEND);
-	wrt = write(opn, text_content, i);
-
-	if (opn == -1 || wrt == -1)
-	{
+	open_flags = O_WRONLY | O_APPEND;
+	fd = open(filename, open_flags);
+	if (fd == -1)
 		return (-1);
-	}
-	close(opn);
 
+	len = _strlen(text_content);
+	if (write(fd, text_content, len) != len)
+		return (-1);
+
+	if ((close(fd) == -1))
+		return (0);
 	return (1);
 }
 
+/**
+ * _strlen - show the lenght of a string
+ * @s: pointer to  pass the array
+ *
+ * Return: none
+ */
+int _strlen(char *s)
+{
+	int a = 0;
+
+	while (s[a])
+		++a;
+
+	return (a);
+}
