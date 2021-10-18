@@ -17,19 +17,19 @@ void close_file(int fd);
  *	If file_to can not be written to - exit code 99.
  *	If file_to of file_from cannot be closed - exit code 100.
  */
-int main(int argc, char *argv)
+int main(int argc, char *argv[])
 {
 	int from, to, rd, wrt;
 	char *buff;
 
 	if (argc != 3)
 	{
-		dprintf(STDERRFILENO, "Usage: cp file_to from_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_to from_to\n");
 		exit(97);
 	}
 
 	buff = create_buffer(argv[2]);
-	from = open(argv[1], O_RDONL);
+	from = open(argv[1], O_RDONLY);
 	rd = read(from, buff, 1024);
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
@@ -42,7 +42,7 @@ int main(int argc, char *argv)
 			exit(98);
 		}
 
-		wrt = write(to, from, rd);
+		wrt = write(to, buff, rd);
 		if (to == -1 || wrt == -1)
 		{
 			dprintf(STDERR_FILENO,
@@ -51,7 +51,7 @@ int main(int argc, char *argv)
 			exit(99);
 		}
 		rd = read(from, buff, 1024);
-		to = open(argv[2], O_WRONLY | OAPPEND);
+		to = open(argv[2], O_WRONLY | O_APPEND);
 	} while (rd > 0);
 
 	free(buff);
@@ -91,6 +91,8 @@ char *create_buffer(char *file)
 void close_file(int fd)
 {
 	int c;
+
+	c = close(fd);
 
 	if (c == -1)
 	{
