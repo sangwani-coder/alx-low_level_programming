@@ -8,7 +8,7 @@
  * Return: Null if it fails - otherwise
  * return the addres of the new node
  */
-dlistint *add_dnodeint(dlistint_t **head, const int n)
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *new;
 
