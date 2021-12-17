@@ -18,14 +18,18 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int hashIndex;
 	hash_node_t *element;
 
+	if (ht == NULL || key == NULL || *key == '\0')
+		return (NULL);
+
 	hashIndex = key_index((const unsigned char *)key, ht->size);
+	if (hashIndex >= ht->size)
+		return (NULL);
+
 	element = ht->array[hashIndex];
 
 	/*Ensure that we move to a non NUL value*/
-	if (element != NULL)
-	{
-		if (strcmp(element->key, key) == 0)
-			return (element->value);
-	}
-	return (NULL);
+	while (element && strcmp(element->key, key) != 0)
+		element = element->next;
+
+	return ((element == NULL) ? NULL : element->value);
 }
