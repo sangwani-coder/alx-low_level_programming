@@ -18,11 +18,12 @@ A _hash table_ is a data structure that maps keys to values. It uses a __hash__ 
 * All your header files should be include guarded
 
 ## Files
-|File		       |prototype                                                                |Description     	       |
-|----------------------|-------------------------------------------------------------------------|------------------------------|
-|0-hash_table_create.c |hash_table_t * hash_table_create(unsigned long int size);                |Creates a hash table          |
-|1-djb2.c              |unsigned long int hash_djb2(const unsigned char * str);                  |implements the djb2 algorithm |
-|2-key_index.c	       |unsigned long int key_index(unsigned char * key, unsigned long int size);|returns the index of a key    |
-
+|File		       |prototype                                                                |Description     	             |
+|----------------------|-------------------------------------------------------------------------|-----------------------------------|
+|0-hash_table_create.c |hash_table_t * hash_table_create(unsigned long int size);                |Creates a hash table               |
+|1-djb2.c              |unsigned long int hash_djb2(const unsigned char * str);                  |implements the djb2 algorithm      |
+|2-key_index.c	       |unsigned long int key_index(unsigned char * key, unsigned long int size);|returns the index of a key         |
+|3-hash_table_Set      |int hash_table_set(hash_table_t * ht, const char * key, const char * value)| Adds an element to a hash table |
+|4-hash_table_get      |char * hash_table_get(const hash_table_t * ht, const char * key      | Retrieves an element asociated with the key|
 
 Author: Sangwani P Zyambo <sangwanizyambo@gmail.com>
