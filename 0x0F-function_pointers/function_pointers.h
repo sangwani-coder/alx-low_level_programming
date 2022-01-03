@@ -1,8 +1,17 @@
-#include <stddef.h>
-#ifndef FUNCTION_POINNTERS_H
+#ifndef FUNCTION_POINTERS_H
 #define FUNCTION_POINTERS_H
-int _putchar(char c);
+
+/*
+ * File: function_pointers.h
+ * Auth: Sangwani P Zyambo
+ * Desc: Header file containing prototypes for all functions
+ *       used in the 0x0E-function_pointers directory.
+ */
+
+#include <stdlib.h>
+
 void print_name(char *name, void (*f)(char *));
-void array_iterator(int *array, size_t size, void (*action)(int));	
+void array_iterator(int *array, size_t size, void (*action)(int));
 int int_index(int *array, int size, int (*cmp)(int));
+
 #endif
