@@ -1,10 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
 
-/** 0-create_array.c
- *  Sangwani P Zyambo <mightypz2@gmail.com
- */
-
 /**
   * create_array - creates an array of chars
   * @size: The size of the array

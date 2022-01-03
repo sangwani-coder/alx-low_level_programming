@@ -1,8 +1,5 @@
 #include "main.h"
 #include <stdlib.h>
-/** 1-strdup.c
- * Sangwani P Zyambo <mightypz2@gmail.com>
- */
 
 /**
   * _strdup - Duplicate a string

@@ -2,10 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-/** 2-str_concat.c
- * Sangwani P Zyambo <mightypz2@gmail.com>
- */
-
 /**
   * str_concat - Concatenates two strings of any size
   * @s1: the first string to concatenate
