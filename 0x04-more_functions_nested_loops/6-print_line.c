@@ -1,19 +1,23 @@
+/*
+ * File: 6-print_line.c
+ * Auth: Sangwani P Zyambo
+ */
+
 #include "main.h"
 
 /**
- *print_line - draw a straight line
- *@n: length of line
- *
+ * print_line - Draws a straight line using the character _.
+ * @n: The number of _ characters to be printed.
  */
-
 void print_line(int n)
 {
-	if (n <= 0)
+	int len;
+
+	if (n > 0)
 	{
-		_putchar('\n');
+		for (len = 0; len < n; len++)
+			_putchar('_');
 	}
-	else
-	{
-		_putchar('_');
+
 	_putchar('\n');
 }
