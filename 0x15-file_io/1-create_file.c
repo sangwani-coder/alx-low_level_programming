@@ -1,50 +1,38 @@
+/*
+ * File: 1-create_file.c
+ * Sangwani P Zyambo
+ */
+
 #include "main.h"
-int _strlen(char *s);
 
 /**
- * create_file - create a file
- * @filename: path to the file
- * @text_content: content for the file
+ * create_file - Creates a file.
+ * @filename: A pointer to the name of the file to create.
+ * @text_content: A pointer to a string to write to the file.
  *
- * Return:  1 on success -1 on failure
+ * Return: If the function fails - -1.
+ *         Otherwise - 1.
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fd, text_len;
-	mode_t filePerms;
+	int o, w, len = 0;
 
 	if (filename == NULL)
 		return (-1);
 
-	filePerms = S_IRUSR | S_IWUSR;
-	fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, filePerms);
+	if (text_content != NULL)
+	{
+		for (len = 0; text_content[len];)
+			len++;
+	}
 
-	if (fd == -1)
+	o = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
+	w = write(o, text_content, len);
+
+	if (o == -1 || w == -1)
 		return (-1);
 
-	if (text_content == NULL)
-		return (1);
+	close(o);
 
-	text_len = _strlen(text_content);
-	if (write(fd, text_content, text_len) != text_len)
-		return (-1);
-
-	close(fd);
 	return (1);
-
-}
-
-/**
- * _strlen - calculate the len of a string
- * @s: string
- *
- * Return: len of string
- */
-int _strlen(char *s)
-{
-	int i = 0;
-
-	while (s[i])
-		i++;
-	return (i);
 }
