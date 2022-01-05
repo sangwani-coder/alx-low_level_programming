@@ -2,6 +2,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+int _strlen(char *str);
+char *_strcopy(char *dest, char *src);
+
 /**
  *new_dog - create a new dog
  *@name: dog name char
@@ -38,7 +41,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	doggy->name = _strcopy(doggy->name, name);
 	doggy->age = age;
-	doggy->owner = _strcopy(doggy-owner, owner);
+	doggy->owner = _strcopy(doggy->owner, owner);
 
 	return (doggy);
 }
