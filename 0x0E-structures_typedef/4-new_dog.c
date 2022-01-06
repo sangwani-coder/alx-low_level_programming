@@ -1,9 +1,8 @@
 #include "dog.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 int _strlen(char *str);
 char *_strcopy(char *dest, char *src);
+dot_t *new_dog(char *name, float age, char *owner);
 
 /**
  *new_dog - create a new dog
