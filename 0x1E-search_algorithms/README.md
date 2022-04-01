@@ -14,3 +14,8 @@ A seach algorithm is an algorithm which solves a search problem. They work to re
 - prototype: **int linear\_search(int \*array, size_t, int value)**;
 - Compiiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
 - The code should pass **Betty** style
+
+* **1. Binary search**
+[1-binary.c](./1-binary.c): Searches for a value in a sorted array of integers using the Binary search algorithm.
+- prototype: **int binary\_search(int \*array, size_t, int value)**;
+- Compiiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
