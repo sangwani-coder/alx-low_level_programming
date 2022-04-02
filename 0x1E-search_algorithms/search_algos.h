@@ -31,7 +31,7 @@ typedef struct listint_s
  *
  * Description: singly linked list node struct with an express lane
  */
-typede struct skiplist_s
+typedef struct skiplist_s
 {
 	int n;
 	size_t index;
@@ -47,4 +47,4 @@ int advanced_binary(int *array, size_t size, int value);
 listint_t *jump_list(listint_t *list, size_t size, int value);
 skiplist_t *linear_skip(listint_t *list, int value);
 
-#endif /* SEARCH_ALGOS_H*/
+#endif /* SEARCH_ALGOS*/
